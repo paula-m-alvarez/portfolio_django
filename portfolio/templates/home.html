@@ -1,8 +1,29 @@
-<h1> Home </h1>
+{% extends 'layout.html '%}
 
-{% for project in projects %}
-    <h2>{{ project.title}}</h2>
-    <p>{{ project.description }}</p>
-    <img src="{{ project.image.url }}" alt="{{project.title}}">
-    <a href="{{ project.url }}"> {{project.url}}</a>
-{% endfor %}
+{% block content %}
+
+{% load static %}
+
+<header class="row bg-black">
+    <div class="col-md-4">
+        <img src="{% static 'portfolio/perfil.jpg' %}">
+    </div>
+
+    <div class="col-md-8 my-auto">
+        <h1> Soy Paula Alvarez </h1>
+        <h2> Backend Developer </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi iste, ipsam ullam excepturi exercitationem harum placeat commodi, dolorem, nostrum nam perspiciatis atque illum ab saepe aliquam cumque sint voluptatum maxime veritatis cum blanditiis quia explicabo suscipit. Eos quibusdam nemo numquam, modi eum in reiciendis, doloremque optio blanditiis eius, dolorum ut suscipit maxime labore rem minima distinctio porro. Quidem quam corporis voluptate! Ducimus velit molestiae quas quia eveniet totam eos, mollitia voluptatem dolore dolorem labore, nam ab ex incidunt necessitatibus reprehenderit laborum distinctio, possimus rem nemo. Sunt mollitia voluptas tenetur porro dolorum ipsa consequatur magni voluptatum alias. At facilis totam temporibus.</p>
+        <a class="btn btn-primary bt-lg rounded-0 my-3 raw" href="{% static 'portfolio/CVPaulaAlvarez.pdf' %}" target="_blank">Download CV</a>
+    </div>
+</header>
+   
+    <h1> Home </h1>
+
+    {% for project in projects %}
+        <h2>{{ project.title}}</h2>
+        <p>{{ project.description }}</p>
+        <img src="{{ project.image.url }}" alt="{{project.title}}">
+        <a href="{{ project.url }}"> {{project.url}}</a>
+    {% endfor %}
+
+{% endblock %}
