@@ -17,13 +17,21 @@
     </div>
 </header>
    
-    <h1> Home </h1>
-
-    {% for project in projects %}
-        <h2>{{ project.title}}</h2>
-        <p>{{ project.description }}</p>
-        <img src="{{ project.image.url }}" alt="{{project.title}}">
-        <a href="{{ project.url }}"> {{project.url}}</a>
-    {% endfor %}
+    <div class="row my-4 text-center">
+        <h3> My Projects </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, accusantium?</p>
+        {% for project in projects %}
+            <div class="col-md-4 p-4">
+                <div class="card bg-black card-project">
+                    <img src="{{ project.image.url }}" alt="{{project.title}}" class="card-img-top">
+                    <div class="card-body">
+                        <h2>{{ project.title}}</h2>
+                        <p>{{ project.description }}</p>
+                        <a href="{{ project.url }}" class="btn btn-light rounded-0 btn-sm" target="_blank"> {{project.url}}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}

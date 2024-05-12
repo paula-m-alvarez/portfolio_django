@@ -1,3 +1,8 @@
 .bg-black {
     background: #090909;
 }
+
+.card-project:hover {
+    border: 1px solid #FFFF;
+    cursor:pointer;
+}
